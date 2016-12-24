@@ -75,6 +75,7 @@ pwd是Print Working Directory的缩写，用来查看“当前工作目录”的
     /root
 
 ****
+
 ## 3.mkdir命令
 
 mkdir是make directory，用来创建新目录。
