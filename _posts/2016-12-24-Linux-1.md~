@@ -9,7 +9,6 @@ tag: 博客
 ## 前言
 　　本文介绍Linux中几个常见的处理目录的命令：cd、pwd、mkdir、rmdir。
 
-****
 ## 1.cd命令
 
 cd是Change Directory的缩写，用来切换工作目录。
@@ -54,6 +53,7 @@ cd是Change Directory的缩写，用来切换工作目录。
 
 
 ****
+
 ## 2.pwd命令
 
 pwd是Print Working Directory的缩写，用来查看“当前工作目录”的完整路径。例如用户的主目录显示的提示符是~，如果想要知道具体的目录，可以输入pwd查看。
