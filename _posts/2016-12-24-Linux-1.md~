@@ -7,10 +7,16 @@ tag: 博客
 ---   
 
 ## 前言
-　　本文介绍Linux中几个常见的处理目录的命令：cd、pwd、mkdir、rmdir。
+　　本文介绍Linux中几个常见的处理目录的命令：
+* [1.cd命令](#1)
+* [2.pwd命令](#2)
+* [3.mkdir命令](#3)
+* [4.rmdir命令](#4)
 
+****
+
+<h2 id="1"> </h2>
 ## 1.cd命令
-
 cd是Change Directory的缩写，用来切换工作目录。
 
 **1命令格式**
@@ -54,6 +60,7 @@ cd是Change Directory的缩写，用来切换工作目录。
 
 ****
 
+<h2 id="2"> </h2>
 ## 2.pwd命令
 
 pwd是Print Working Directory的缩写，用来查看“当前工作目录”的完整路径。例如用户的主目录显示的提示符是~，如果想要知道具体的目录，可以输入pwd查看。
@@ -76,6 +83,7 @@ pwd是Print Working Directory的缩写，用来查看“当前工作目录”的
 
 ****
 
+<h2 id="3"> </h2>
 ## 3.mkdir命令
 
 mkdir是make directory，用来创建新目录。
@@ -114,6 +122,7 @@ mkdir是make directory，用来创建新目录。
 
 ****
 
+<h2 id="4"> </h2>
 ## 4.rmdir命令
 
 rmdir是remove directory，用来删除目录。
