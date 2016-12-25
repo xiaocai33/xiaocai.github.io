@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "常用Linux命令(3)：文件基本管理"
+title: "Linux 学习笔记-常用Linux命令(3)：文件基本管理"
 date: 2016-12-25 
-description: "常用Linux命令(3)：文件基本管理，包括ls、cp、rm、mv、basename和dirname等"
+description: "Linux学习笔记-常用Linux命令(3)：文件基本管理，包括ls、cp、rm、mv、basename和dirname等"
 tag: 博客 
 ---   
 
@@ -94,93 +94,180 @@ cp即copy，在linux系统中用于拷贝文件。
 
 **2.命令功能**
 
-查看“当前工作目录”的完整路径
+将源文件复制一份为目标文件
 
-**3.常用范例**
+将多个源文件复制一份至目标目录。
 
-    [root@localhost ~]# pwd
-    /root
+**3.常用参数**
 
-****
+-a 等于-pdr，即同时使用-p -d -r三个参数
 
-<h2 id="3">3.mkdir命令 </h2>
+-b 类似--backup 但不接受参数，在递归处理时复制特殊文件内容
 
-mkdir是make directory，用来创建新目录。
+-d 若源文件是连接文件的属性，则复制连接文件属性而非文件本身。等于--no-dereference --preserve=links
 
-**1.命令格式**
+-f 即force的意思， 如果目标文件已经存在且无法打开，则将目标文件删除再尝试
 
-    mkdir [选项] 目录名
+-i 若目标文件已经存在，在覆盖前询问
 
-**2.命令功能**
+-H 跟随源文件中的命令行符号链接
 
-通过mkdir命令可以实现在指定位置创建指定文件名的文件夹或目录。
+-l 创建硬连接，而非复制复制文件本身
 
-要求创建目录的用户在当前目录中具有写权限，并且指定的目录名不能是当前目录中已有的目录。
+-L，--dereference 总是跟随符号链接
 
-**3.命令参数**
+-n，--no-clobber 不要覆盖已存在的文件(使前面的 -i 选项失效)
 
-选项参数：
--m: 配置文件的权限，直接设置，不需要看默认权限(umask)
--p: 帮助你直接将所需要的目录递归建立起来(即，如果路径中某些目录不存在，系统自动建立好那些尚不存在的目录)
+-P，--no-dereference 不跟随源文件中的符号链接
 
-**4.常用范例**
+-p  连同文件的属性一起复制过去，而非使用默认属性(备份常用)
 
-    [root@localhost ~]# mkdir test
-    #创建一个名为test的目录
-    
-    [root@localhost ~]# mkdir test1/test2/test3/test4
-    mkdir: cannote crete directory 'test1/test2/test3/test4':
-    No such file or Directory
-    #无法直接创建此目录
-    
-    [root@localhost ~]# mkdir -p test1/test2/test3/test4
-    #加参数p可以自行创建多层目录
-    
-    [root@localhost ~]# mkdir -m 711 test2
-    #新建权限为rwx--x--x的目录test2
+-R, -r, --recursive 递归复制，如果目录内有其他文件或目录，则一起复制
 
-****
+-s 复制成为符号连接文件(symbolic link)，即“快捷方式”文件
 
-<h2 id="4"> 4.rmdir命令</h2>
-
-rmdir是remove directory，用来删除目录。
-
-**1.命令格式**
-
-    rmdir [选项] 目录名
-
-**2.命令功能**
-
-删除指定名字的目录
-
-要求删除的是空目录，即目录里面不能存在其他的文件或目录
-
-**3.命令参数**
-
--p: 如果删除该目录后，上层目录是空的，那么递归地连同上层目录一起删除。
+**注意：** 如果源文件有多个，则目标必须是目录
 
 **4.常用范例**
 
-将mkdir命令范例中创建的目录删除掉
+**例1:** 将当前目录下的test1文件复制到dir/子目录下，并更名为test2
 
-    [root@localhost ~]# rmdir test
-    #将名为test的目录删除
+    [root@localhost ~]# cp test1 dir/test2
+    [root@localhost ~]# cp -i test1 dir/test2
+    cp: overwrite 'dir/test2'? 
+    #重复两次操作，第二次加上-i参数后，在覆盖前会询问用户，输入n或y进行确认
+
+**注意:** 在没有带-a或-p参数时，目标文件的时间是默认的。在带了-a或-p参数时，目标文件的时间和源文件一致。
+
+**例2:** 将当前目录下的test1文件复制到dir/子目录下，并保留文件名
+
+    [root@localhost ~]# cp test1 dir/
+
+**例3:** 将dir1/中的所有文件(包括目录)复制到dir2/中
+
+    [root@localhost ~]# cp -a dir1/* dir2/ 
+    #如果没有-a参数，则只复制普通文件，不复制dir1/中的子目录
+    [root@localhost ~]# cp -a dir1 dir2 
+    #如果dir2不存在，则自动创建dir2并将dir1中的文件复制到dir2中。如果dir2存在，则dir1目录本身将全部复制到dir2里面。
+
+**例4:** 复制一个test1文件的符号连接文件
+
+    [root@localhost ~]# cp -s test1 test1.link
+    [root@localhost ~]# ll
+    lrwxrwxrwx 1 root root     5 12-25 22:12 test1.link -> test1
+    -rwxrwxr-x 1 root root 18337 12-13 11:52 test1
+    #可以看到test1.link是个“快捷方式”，右边指示的是它“连接”到哪里去
     
-    [root@localhost ~]# rmdir test1/test2/test3/test4
-    #仅删除目录test1/test2/test3/test4, test1/test2/test3仍然存在
+
+
+****
+
+<h2 id="3">3.rm命令 </h2>
+
+
+**1.命令格式**
+
+    rm [参数] 文件或目录
+
+**2.命令功能**
+
+rm命令用于移除文件或者目录。
+
+**3.常用参数**
+
+-f: 就是force，忽略不存在的文件，不提示警告信息。
+
+-i: 互动模式，删除前会询问用户是否操作
+
+-r: 递归删除，经常用在目录的删除。(非常危险!)
+
+**4.常用范例**
+
+    [root@localhost ~]# rm -i test
+    rm: remove regular file 'test'? 
+    #删除test文件，由于加入-i参数，删除前会进行询问
     
-    [root@localhost ~]# rmdir -p test1/test2/test3
-    #递归地删除多层目录。由于删除test3后test2为空，则test2也被删除。同理，test1也被删除。
+    [root@localhost ~]# rm -i *.jpg
+    #删除所有以.jpg结尾的文件
+    
+    [root@localhost ~]# rm -r dir1
+    #删除目录dir1及里面的所有文件
+
+**注意:** 1.rmdir删除时要求目录为空，但rm -r命令可以直接删掉目录及里面的所有文件。
+
+2.rm命令不加-r参数时，只能删除文件，无法直接删除一个目录。
+    
+
+****
+
+<h2 id="4"> 4.mv命令</h2>
+
+**1.命令格式**
+
+    mv [参数] 源文件或目录 目标文件或目录
+
+**2.命令功能**
+
+移动文件指定名字的目录，或对文件进行重命名。
+
+**3.常用参数**
+
+-f: 就是force，如果目标文件已经存在，不询问直接覆盖
+
+-i: 互动模式，目标文件如果存在会询问用户是否覆盖
+
+-u: 若目标文件已存在且源文件比较新，才进行操作(update)。
+
+
+**4.常用范例**
+
+**例1:** ，
+
+    [root@localhost ~]# cp test1 test2
+    # 复制test1为test2
+    
+    [root@localhost ~]# mkdir dir1
+    # 创建一个目录dir1
+    
+    [root@localhost ~]# mv test2 dir1
+    # 将test2移动进dir1
+    
+    [root@localhost ~]# mv test1 test3
+    # 将test1重命名为test3
+    
+    [root@localhost ~]# cp test3 test1
+    # 复制test3为test1
+    
+    [root@localhost ~]# mv test1 test3 dir1
+    # 将test1和test3一起移动到dir1中
  
 ****
 
-## 扩展阅读
+<h2 id="5"> 5.basename和dirname</h2>
 
-《鸟哥的linux私房菜》
+**1.命令格式**
 
-[每天一个linux命令](http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
+    basename 完整文件名(包含目录与文件名)
+    dirname 完整文件名(包含目录与文件名)
 
+**2.命令功能**
+
+获取文件名或目录名称
+
+**3.常用范例**
+
+    [root@localhost ~]# basename /etc/sysconfig/network
+    network
+    # 获取的文件名为network
+    
+    [root@localhost ~]# dirname /etc/sysconfig/network
+    /etc/sysconfig
+    # 获取的目录名为/etc/sysconfig
+
+**注意:** 并不要求文件一定存在
 
 ****
 
-转载请注明原地址，本文地址：[http://kousw.com/2016/12/Linux-1](http://kousw.com/2016/12/Linux-1) 谢谢！
+
+
+转载请注明原地址，本文地址：[http://kousw.com/2016/12/Linux-3](http://kousw.com/2016/12/Linux-3) 谢谢！
