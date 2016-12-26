@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Linux学习笔记-常用Linux命令专栏汇总"
+title: "Linux学习笔记-常用Linux命令：目录汇总"
 date: 2016-12-25 
-description: "本文把专栏的文章进行了汇总，便于命令的查找。"
-tag: 博客 
+description: "本文把Linux相关的文章进行了汇总，便于命令的查找。"
+tag: Linux 
 ---   
 
 ## 前言
@@ -30,6 +30,8 @@ tag: 博客
 
 [Linux学习笔记-常用Linux命令(2):目录和路径](http://kousw.com/2016/12/Linux-2/)
 
+[Linux学习笔记-常用Linux命令(3):文件基本管理](http://kousw.com/2016/12/Linux-3/)
+
 
 ****
 
@@ -37,8 +39,8 @@ tag: 博客
 
 (已写)
 
-| [bc](http://kousw.com/2016/12/Linux-1/#3) | [cd](http://kousw.com/2016/12/Linux-2/#1) | [date](http://kousw.com/2016/12/Linux-1/#1) | [cal](http://kousw.com/2016/12/Linux-1/#2) | [mkdir](http://kousw.com/2016/12/Linux-2/#3) | [rmdir](http://kousw.com/2016/12/Linux-2/#3) | [pwd](http://kousw.com/2016/12/Linux-2/#2) |
-
+| [bc](http://kousw.com/2016/12/Linux-1/#3) | [cd](http://kousw.com/2016/12/Linux-2/#1) | [date](http://kousw.com/2016/12/Linux-1/#1) | [cal](http://kousw.com/2016/12/Linux-1/#2) | [mkdir](http://kousw.com/2016/12/Linux-2/#3) | [rmdir](http://kousw.com/2016/12/Linux-2/#3) | [pwd](http://kousw.com/2016/12/Linux-2/#2) | | | |
+|[basename](http://kousw.com/2016/12/Linux-3/#5)|[dirname](http://kousw.com/2016/12/Linux-3/#5)| [ls](http://kousw.com/2016/12/Linux-3/#1) | [cp](http://kousw.com/2016/12/Linux-3/#2) | [rm](http://kousw.com/2016/12/Linux-3/#3) | [mv](http://kousw.com/2016/12/Linux-3/#4) | | | | |
  
 ****
 
