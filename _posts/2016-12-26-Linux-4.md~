@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Linux 学习笔记-常用Linux命令(4)：文件内容查看"
-date: 2016-12-26 
+date: 2016-12-25 
 description: "Linux学习笔记-常用Linux命令(4)：文件内容查看，包括cat、tac、nl、more、less、head、tail、od等"
 tag: Linux 
 ---   
