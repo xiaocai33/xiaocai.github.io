@@ -8,7 +8,7 @@ avatarTitle: KOUSHAO
 avatarDesc: 算法 / 机器学习
 url: "http://kousw.com"
 
-pygments: true
+
 
 # Comment
 comment:
@@ -46,7 +46,8 @@ ga:
 
 permalink: /:year/:month/:title/
 # Format
-highlighter: rouge
+markdown: kramdown
+highlighter: pygments
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 cover_color: clear

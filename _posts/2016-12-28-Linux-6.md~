@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Linux 学习笔记(6)-常用Linux命令：文件权限和属性"
+title: "Linux 学习笔记(6)-常用Linux命令：文件权限和属性1"
 date: 2016-12-28 
-description: "Linux学习笔记(6)-常用Linux命令：文件权限和属性，介绍几个权限和属性相关的命令，如chgrp、chown、chmod、touch、umask等"
+description: "Linux学习笔记(5)-常用Linux命令：文件权限和属性1，介绍几个权限和属性相关的命令，如chgrp、chown、chmod、touch等"
 tag: Linux 
 ---   
 
@@ -17,9 +17,6 @@ tag: Linux
 * [3.chmod命令](#3)
 
 * [4.touch命令](#4)
-
-* [5.umask命令](#5)
-
 
 
 
@@ -209,42 +206,6 @@ touch命令的用法是：
 
     [root@localhost ~]# touch newfile
     #以当前时间为属性，创建一个新文件newfile(要求newfile原本不存在)
-
-
-<h2 id="5">5.umask命令 </h2>
-
-我们知道可以用touch创建一个新文件，它的时间是当前的时间。那么这个文件的属性是什么呢？更一般的说，当我们新建一个新的文件或目录时，它的默认权限是什么？这个就是和umask相关。
-
-**功能**
-
-umask用来查询当前用户在新建文件或目录的时候的权限默认值。
-
-**使用方式**
-
-    [root@localhost ~]# mask
-    0022
-
-或
-
-    [root@localhost ~]# mask -S
-    u=rwx,g=rx,o=rx
-
-可以看到，带参数-S的输出，明确指明了各组用户的权限值。那么没有参数时输出的0022代表什么呢？
-
-事实上，这4位数的第一位是特殊权限用的，我们不用管他。后面的三位，是用[上面](http://kousw.com/2016/12/Linux-6/#3)介绍的方法对“没有”的权限进行数字编码。
-换言之，如果一个用户创建文件的默认权限是-rwxr-xr-x，那么相当于从所有的权限中去掉了-----w--w-权限，这个权限用[上面](http://kousw.com/2016/12/Linux-6/#3)的数字表示即是022。
-
-
-**设置umask**
-
-如果需要设置umask的值，那么直接用umask后跟对应权限的数字即可(使用用需要去掉的权限的数字)。
-
-    [root@localhost ~]# mask 022
-
-上述例子即将默认权限设为:-rwxr-xr-x
-
-
-
 
 
 

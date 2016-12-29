@@ -11,11 +11,9 @@ title: 我的书签
 
 * [lilian的博客](https://lilian.info)
 
-$$E=mc^2$$
+* [每天一个linux命令](http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
 
-### 2. 书写一个质能守恒公式[^LaTeX]
 
-$$E=mc^2$$
 <p>
 
 

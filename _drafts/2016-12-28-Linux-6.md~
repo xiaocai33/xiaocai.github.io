@@ -2,7 +2,7 @@
 layout: post
 title: "Linux 学习笔记(6)-常用Linux命令：文件权限和属性"
 date: 2016-12-28 
-description: "Linux学习笔记(6)-常用Linux命令：文件权限和属性，介绍几个权限和属性相关的命令，如chgrp、chown、chmod、touch、umask等"
+description: "Linux学习笔记(6)-常用Linux命令：文件权限和属性，介绍几个权限和属性相关的命令，如chgrp、chown、chmod、touch、umask、chattr、lsattr等"
 tag: Linux 
 ---   
 
@@ -20,6 +20,7 @@ tag: Linux
 
 * [5.umask命令](#5)
 
+* [6.chattr和lsattr](#6)
 
 
 
@@ -244,6 +245,7 @@ umask用来查询当前用户在新建文件或目录的时候的权限默认值
 上述例子即将默认权限设为:-rwxr-xr-x
 
 
+<h2 id="6">6.chattr和lsattr </h2>
 
 
 

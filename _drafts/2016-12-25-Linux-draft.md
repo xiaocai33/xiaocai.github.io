@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Linux 学习笔记-常用Linux命令(3)：文件基本管理"
-date: 2016-12-25 
-description: "Linux学习笔记-常用Linux命令(3)：文件基本管理，包括ls、cp、rm、mv、basename和dirname等"
+title: "test"
+date: 2016-12-29 
+description: "test"
 tag: Linux 
 ---   
 
@@ -61,11 +61,18 @@ if __name__ == '__main__':
     print 'hello world'
 ```
 
+
+
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
+
 ***
 
-
-****
-
-
-
-转载请注明原地址，本文地址：[http://kousw.com/2016/12/Linux-3](http://kousw.com/2016/12/Linux-3) 谢谢！
