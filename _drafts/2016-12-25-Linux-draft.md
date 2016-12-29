@@ -43,11 +43,25 @@ tag: Linux
 
 **例1:** 列出主文件夹下的所有文件
 
+```
+$requieres_audfa;
+```
+
+
     [root@localhost ~]# ×× -al ~
     #-××
 
+```python
+@requires_authorization
+class SomeClass:
+    pass
 
-****
+if __name__ == '__main__':
+    # A comment
+    print 'hello world'
+```
+
+***
 
 
 ****

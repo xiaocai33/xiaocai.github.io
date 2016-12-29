@@ -8,11 +8,7 @@ avatarTitle: KOUSHAO
 avatarDesc: 算法 / 机器学习
 url: "http://kousw.com"
 
-markdown: kramdown
-kramdown:
-  input:  GFM
-  use_coderay:
-
+pygments: true
 
 # Comment
 comment:
