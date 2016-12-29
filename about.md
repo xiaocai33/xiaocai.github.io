@@ -10,7 +10,7 @@ title: 关于我
 如果你想使用我这个博客模板，可以到 
 <a href="http://github.com/shaohuacheng"> 我的github主页 </a>
 
-本博客模板基于<a href="http://baixin.io">潘柏信</a>的博客模板。
+本博客模板基于<a href="http://baixin.io">http://baixin.io</a>。
 
 <p>
 

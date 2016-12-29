@@ -1,21 +1,21 @@
 ---
 layout: post
-title: "常用Linux命令(2)：文件基本管理"
+title: "Linux学习笔记-常用Linux命令(2)：目录和路径"
 date: 2016-12-24 
-description: "常用Linux命令(2)：文件基本管理，包括ls、cp、rm、mv、basename和dirname等"
-tag: 博客 
+description: "Linux学习笔记-常用Linux命令(2)：目录和路径，包括cd、pwd、mkdir、rmdir等"
+tag: Linux 
 ---   
 
 ## 前言
 本文介绍Linux中几个常见的处理目录的命令：
 
-* [1.ls命令](#1)
+* [1.cd命令](#1)
 
-* [2.cp命令](#2)
+* [2.pwd命令](#2)
 
-* [3.rm命令](#3)
+* [3.mkdir命令](#3)
 
-* [4.mv命令](#4)
+* [4.rmdir命令](#4)
 
 
 ****
@@ -25,7 +25,7 @@ tag: 博客
 
 cd是Change Directory的缩写，用来切换工作目录。
 
-**1命令格式**
+**1.命令格式**
 
     cd [dirName]
 其中，dirName可以是相对路径或绝对路径，也可以是一些特殊目录的符号。
@@ -169,4 +169,4 @@ rmdir是remove directory，用来删除目录。
 
 ****
 
-转载请注明原地址，本文地址：[http://kousw.com/2016/12/Linux-1](http://kousw.com/2016/12/Linux-1) 谢谢！
+转载请注明出处，本文地址：[http://kousw.com/2016/12/Linux-2](http://kousw.com/2016/12/Linux-2) 谢谢！

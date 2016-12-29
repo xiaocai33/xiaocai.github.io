@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Linux学习笔记-常用Linux命令(1)：目录和路径"
-date: 2016-12-24 
-description: "Linux学习笔记-常用Linux命令(1)：目录和路径，包括cd、pwd、mkdir、rmdir等"
-tag: 博客 
+title: "Linux学习笔记-常用Linux命令(2)：目录和路径"
+date: 2016-12-25 
+description: "Linux学习笔记-常用Linux命令(2)：目录和路径，包括cd、pwd、mkdir、rmdir等"
+tag: Linux 
 ---   
 
 ## 前言
