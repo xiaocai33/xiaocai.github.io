@@ -13,6 +13,10 @@ title: 我的书签
 
 * [每天一个linux命令](http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html)
 
+* [lilian的博客](https://lilian.info)
+
+* [Linux命令大全](http://www.ziqiangxuetang.com/linux/linux-command-manual.html)
+
 
 <p>
 
