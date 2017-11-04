@@ -1,3 +1,4 @@
+#encoding=gbk
 ---
 layout: post
 title: "test"
