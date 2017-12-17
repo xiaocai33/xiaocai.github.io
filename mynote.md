@@ -18,6 +18,16 @@ title: 我的书签
 
 * [Linux命令大全](http://www.ziqiangxuetang.com/linux/linux-command-manual.html)
 
+* [黄芬微博](https://weibo.cn/EvelynHf)
+
+* [刘泽春博客](http://www.liuzechun.cn/index.php/note/index)
+
+* [腾讯云校园](https://cloud.tencent.com/act/campus)
+
+* [百度吉他社](http://wiki.baidu.com/pages/viewpage.action?pageId=387389968)
+
+* [中国通史](https://www.bilibili.com/video/av6547465/)
+
 
 <p>
 
