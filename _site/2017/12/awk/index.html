@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title>我的书签</title>
-  <meta name="description" content="程序员，喜欢打麻将，偶尔写代码.">
+  <title>awk用法整理</title>
+  <meta name="description" content="前言">
   <meta name="author" content="leopardpan">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="我的书签">
-  <meta name="twitter:description" content="程序员，喜欢打麻将，偶尔写代码.">
+  <meta name="twitter:title" content="awk用法整理">
+  <meta name="twitter:description" content="前言">
   
   <meta property="og:type" content="article">
-  <meta property="og:title" content="我的书签">
-  <meta property="og:description" content="程序员，喜欢打麻将，偶尔写代码.">
+  <meta property="og:title" content="awk用法整理">
+  <meta property="og:description" content="前言">
   
   <link rel="icon" type="image/png" href="/images/favicon.png" />
   <link href="/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="/css/main.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <link rel="canonical" href="http://localhost:4000/mynote/">
+  <link rel="canonical" href="http://localhost:4000/2017/12/awk/">
   <link rel="alternate" type="application/rss+xml" title="寇少" href="http://localhost:4000/feed.xml">
   
   <meta name="google-site-verification" content="1-1ZlHoRvM0T2FqPbW2S-qLgYXN6rsn52kErlMPd_gw" />
@@ -178,45 +178,189 @@
         <div class="content-wrapper__inner">
             <article class="post-container post-container--single" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
+    <h1 class="post-title">awk用法整理</h1>
     <div class="post-meta">
-      <time datetime="" itemprop="datePublished" class="post-meta__date date"></time>
-      <span class="post-meta__tags tags"></span>
+      <img src="/images/calendar.png" width="20px"/> 
+      <time datetime="2017-12-17 00:00:00 +0800" itemprop="datePublished" class="post-meta__date date">2017-12-17</time>  
+         
+      <span id="busuanzi_container_page_pv"> | 阅读：<span id="busuanzi_value_page_pv"></span>次</span>
+    </p>
     </div>
-    <h1 class="post-title">我的书签</h1>
   </header>
 
   <section class="post">
-    <ul>
+    <h2 id="前言">前言</h2>
+
+<p>awk是一个Linux中一个好用的数据处理工具，在实际应用中十分频繁。
+相对于sed经常作用于一整行的处理，awk比较倾向于将一行分成数个“字段”来处理。
+因此，awk适合小型的数据处理。
+awk默认通过空格和[tab]键将每行数据进行分隔，然后根据给定的动作执行相应的后续操作。
+它既可以处理文件，也可以处理管道的数据。</p>
+
+<ul>
   <li>
-    <p><a href="http://www.kousw.com/conference">数据挖掘和机器学习方向的一些顶级会议</a></p>
+    <p><a href="#1">1.基本用法</a></p>
   </li>
   <li>
-    <p><a href="https://www.zybuluo.com/mdeditor">Markdown语法</a></p>
+    <p><a href="#2">2.内置变量</a></p>
   </li>
   <li>
-    <p><a href="https://github.com/dearLilian/dearLilian.github.io">lilian的博客模板(github)</a></p>
-  </li>
-  <li>
-    <p><a href="https://lilian.info">lilian的博客</a></p>
-  </li>
-  <li>
-    <p><a href="http://www.cnblogs.com/peida/archive/2012/12/05/2803591.html">每天一个linux命令</a></p>
-  </li>
-  <li>
-    <p><a href="https://lilian.info">lilian的博客</a></p>
-  </li>
-  <li>
-    <p><a href="http://www.ziqiangxuetang.com/linux/linux-command-manual.html">Linux命令大全</a></p>
+    <p><a href="#3">3.条件控制</a></p>
   </li>
 </ul>
 
-<p>
+<hr />
+
+<h2 id="1">1.基本用法 </h2>
+
+<p>其基本用法如下：</p>
+
+<pre><code>[root@localhost ~]# awk '条件类型1{动作1}条件类型2{动作2}...'  filename
+</code></pre>
+
+<p>awk后面接的两个单引号并加上花括号，表示想要对数据进行的处理动作。例如</p>
+
+<pre><code>[root@localhost ~]# awk '{print $1 "\t" $3}' filename
+</code></pre>
+
+<p>表示，将filename中的每一行数据进行分隔，输出第1个和第3个字段，中间用”\t”分开。</p>
+
+<p>通常，awk用美元符号$后面跟数字代表该行的第几个字段。如果是$0，则代表一整行。</p>
+
+<hr />
+
+<h2 id="2">2.内置变量 </h2>
+
+<p>awk里面内置了很多变量，方便执行复杂动作。</p>
+
+<p>NF: 每一行拥有的字段总数</p>
+
+<p>NR: 目前aw所处理的是“第几行”数据，即当前数据的行号</p>
+
+<p>FS: 目前的分隔字符，默认是空格</p>
+
+<p>例子：</p>
+
+<pre><code>[root@localhost ~]# awk '{print $1 "\t lines:" NR "\t columes" NF}' filename
+root   lines: 1  columes:10
+root   lines: 2  columes:10
+root   lines: 3  columes:10
+root   lines: 4  columes:10
+root   lines: 5  columes:9
+</code></pre>
+
+<p>双引号中的是指定字符串，如本例中的”\t lines:”等。</p>
+
+<p>输出的NR代表本行行号，输出NF代表本行有多少字段。</p>
+
+<hr />
+
+<h2 id="3">3.条件控制 </h2>
+
+<p>awk的用法是：</p>
+
+<pre><code>[root@localhost ~]# awk '条件类型1{动作1}条件类型2{动作2}...'  filename
+</code></pre>
+
+<p>条件类型的基本的逻辑运算与大多数程序语言相同：</p>
+
+<p>&gt; 大于</p>
+
+<p>&lt; 小于</p>
+
+<p>&gt;= 大于等于</p>
+
+<p>&lt;= 小于等于</p>
+
+<p>== 等于</p>
+
+<p>!= 不等于</p>
+
+<p>此外，可以通过BEGIN或END指定执行awk之前或之后的操作</p>
+
+<pre><code>[root@localhost ~]# awk 'BEGIN {动作1} 条件1{动作2} END{动作3}'
+</code></pre>
+
+<p>awk是按行处理的，在第1行输入之前，会先执行BEGIN后的动作1，然后对于每一行，根据条件1执行动作2。最后所有行结束之后，执行END后的动作3。</p>
+
+<p>实例1：
+在/etc/passwd当中是以冒号”:”来作为字段的分隔，该文件的第一字段是账号，第三字段是UID。
+假设我要查阅第三列小于10的数据，并且只列出账号和第三列，则可以这么做：</p>
+
+<pre><code>[root@localhost ~]# cat /tec/passwd | awk '{FS=":"} $3 &lt; 10{print $1 "\t" $3}'
+</code></pre>
+
+<p>其中，cat 命令输出文件内容到标准输出，awk接收之后，首先设置默认分隔字符FS为“:”。
+“$3 &lt; 10”是条件类型，表示只查阅第三列小于10的数据。”{print $1 “\t” $3}”是动作，输出第一列和第三列。</p>
+
+<p>上述方法存在问题，设置”{FS=”:”}”只针对第二行以后有效，因为当执行该指令时第一行已经被读入了。
+想避免此情况，可利用BEGIN关键字，预先设置awk的变量。</p>
+
+<pre><code>[root@localhost ~]# cat /tec/passwd | awk ' BEGIN {FS=":"} $3 &lt; 10{print $1 "\t" $3}'
+</code></pre>
+
+<p>实例2：假设有一个薪资数据表pay.tex如下：</p>
+
+<pre><code>Name    1st    2nd     3th
+Tom    23000   24000   25000
+Bob    21000   20000   23000
+Marry  43000   42000   41000
+</code></pre>
+
+<p>现在要统计每个人的三个月的总薪资，如何做？</p>
+
+<p>由于第一行是标题，所以需要特殊处理。</p>
+
+<pre><code>[root@localhost ~]# cat pay.txt | awk ' NR==1 {print "%10s %10s %10s %10s %10s\n", $1,$2, $3, $4, "Total"}
+NR&gt;=2 {total = $2+$3+$4; print "%10s %10s %10s %10s %10s\n", $1, $2, $3, $4total}'
+</code></pre>
+
+<p>注意：</p>
+
+<p>awk中可用”;”隔离，或直接换行，用来执行多个动作。</p>
+
+<p>awk中变量(如上面的total)可直接使用，不需要定义也不需要加上$符号。</p>
+
+<hr />
 
 
-</p>
 
   </section>
 </article>
+
+<section>
+       <ul class="pager">
+        
+        <li class="previous">
+            <a href="/2017/11/idea_sj/" data-toggle="tooltip" data-placement="top" title="《时间简史》随想">上一篇：  <span>《时间简史》随想</span>
+            </a>
+        </li>
+        
+        
+    </ul>
+</section>
+
+<section class="post-comments">
+
+  
+    <div class="ds-thread" data-thread-key="/2017/12/awk/" data-title="awk用法整理" data-url="http://localhost:4000/2017/12/awk/"></div>
+
+    <script type="text/javascript">
+        var duoshuoQuery = {short_name:"koushao"};
+        (function() {
+            var ds = document.createElement('script');
+            ds.type = 'text/javascript';ds.async = true;
+            ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            ds.charset = 'UTF-8';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+        })();
+    </script>
+  
+  
+  
+  
+</section>
+
 
             <section class="footer">
     <footer>
