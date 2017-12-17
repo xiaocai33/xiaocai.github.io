@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>寇少</title>
+    <description>程序员，打麻将，偶尔写代码</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sun, 17 Dec 2017 16:48:25 +0800</pubDate>
+    <lastBuildDate>Sun, 17 Dec 2017 16:48:25 +0800</lastBuildDate>
+    <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>《时间简史》随想</title>
+        <description>&lt;p&gt;人类对于宇宙的探索古已有之。
+从《庄子》中对宇宙的描述，”泛泛乎其若四方之无穷，其无所畛域“；
+到东汉的张衡的书中记载，“宇之表无极，宙之端无穷“。&lt;/p&gt;
+
+&lt;p&gt;从古埃及从季节的变换进行农作物耕种和收获，到日历的诞生和天文学的发展。&lt;/p&gt;
+
+&lt;p&gt;从美索不达米亚人认为的高山围起大地，天空悬在高山之上的古老认知，到地心说、日心说的发展，再到现代天体物理学科的发展。&lt;/p&gt;
+
+&lt;p&gt;人类对宇宙的认知随着科技的进步不断发展。&lt;/p&gt;
+
+&lt;p&gt;看《时间简史》，本来有很多感悟，却不由得《武林外传》里吕秀才智斗姬无命那段词：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我和宇宙之间有必然的联系吗？宇宙是否有尽头，时间是否有长短，过去的时间在那里消失，未来的时间又在何处停止？&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;关于宇宙的这些问题，竟然都在时间简史中找到了答案。&lt;/p&gt;
+
+&lt;p&gt;王羲之曾有文曰：仰观宇宙之大，俯察品类之盛。
+面对无边的宇宙，最后也只能“临文嗟悼，不能喻之于怀”。得出“固知一死生为虚诞，齐彭殇为妄作”的感慨。
+后之视今，亦犹今之视昔。
+每个人匆匆百年，都是宇宙的尘埃过客，岂不悲夫？&lt;/p&gt;
+</description>
+        <pubDate>Tue, 14 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/idea_sj/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/idea_sj/</guid>
+        
+        <category>book</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>vim的一些技巧</title>
+        <description>&lt;p&gt;之前使用vim只会用简单的操作，遇到某些需求还是需要很麻烦的操作。
+后来发现需要的功能其实vim都有，只是某些技巧还没掌握。
+Vim功能实在太强大，在此对vim功能做个简单汇总，以便日后查阅。
+命令是死的，人是活的。巧妙使用可以带来amazing的效果。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#1&quot;&gt;查找命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#2&quot;&gt;移动光标命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#3&quot;&gt;拷贝/删除/粘贴命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#4&quot;&gt;编辑命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#5&quot;&gt;替换命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#6&quot;&gt;标签页命令&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#7&quot;&gt;缩进&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#8&quot;&gt;补全补齐&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;#9&quot;&gt;其他&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1&quot;&gt; 查找命令 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;*/#/gd&lt;/strong&gt;: 这两个可以查找完全匹配当前单词的字符串，*是往后找，#是往前找，gd会跳到文档第一个匹配处。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;g*/g#&lt;/strong&gt;: 这两个命令可以查找包含当前单词的字符串，比如在单词is上，可以找到aisb，只使用*/#则不行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;%&lt;/strong&gt;: 跳到匹配的括号处(){}[]&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;fx/Fx&lt;/strong&gt;: 跳到当前行前一个/后一个字符x处，x可以是任意字符。找到后输入”;”继续找，输入”,”反方向找。本身是查找命令，但用来移动光标非常方便&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;或者在#命令模式#下使用&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;/str1&lt;/strong&gt;:	向后查找&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;?str1&lt;/strong&gt;:	向前查找&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;str1指代任何正则表达式&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;2&quot;&gt; 移动光标命令 &lt;/h2&gt;
+
+&lt;h4 id=&quot;移动光标&quot;&gt;移动光标&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;j/k/l/s&lt;/strong&gt;:   光标向上/下/左/右移动&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;w(e)/b&lt;/strong&gt;:   下一个单词(词尾)/下一个单词&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;0/^/$&lt;/strong&gt;:   行开头处/行开头第一个字符处/行末尾&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;H/M/L&lt;/strong&gt;:   移动光标到：屏幕的首行/中间一行/尾行，不难记，就是high/middle/low&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;gg/G&lt;/strong&gt;:    整个文档的首行/尾行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;{&lt;/strong&gt;:	转到上一个空行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;}&lt;/strong&gt;:	转到下一个空行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;移动屏幕&quot;&gt;移动屏幕&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+f/ctrl+b&lt;/strong&gt;:   类似windows中的page down/page up, f和b怀疑是front和back&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+u/ctrl+d&lt;/strong&gt;:   屏幕向后/前移动半页，相当于半个page up/page down，u和d分别对应up和down&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+e/ctrl+y&lt;/strong&gt;:   编辑窗口中的文件内容整体上移/下移一行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;zz/zt/zb&lt;/strong&gt;:   将当前行放置于页面中间/页面顶端/页面底部, 尤其是zt命令在阅读函数时简直神器&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h4 id=&quot;标记和标签&quot;&gt;标记和标签&lt;/h4&gt;
+
+&lt;p&gt;在修改文档过程中vim会自动记录标记,user也可以给某些地方手动设置标签.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;’’&lt;/strong&gt;:   连按两个单引号，可以回到光标刚才的标记处，比如gd到文档开头，可以用它回到刚才的地方&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;’.&lt;/strong&gt;:   回到刚才修改的那一行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;`.&lt;/strong&gt;:    回到刚才修改的那个地方&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ma&lt;/strong&gt;:	把当前位置存成标签a&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;`a&lt;/strong&gt;:	跳转到标签a处&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3&quot;&gt; 拷贝/删除/粘贴命令 &lt;/h2&gt;
+
+&lt;p&gt;vim中y表示拷贝,d表示删除,p表示粘贴，后面跟内容表示具体的操作域(结合f/F命令非常方便)，前面加数字表示执行次数。
+(操作域:w代表光标处到当前词尾，aw表示不管光标位置总是整个词)&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;yw/ye/y0/y^/y$/yy&lt;/strong&gt;:   拷贝从当前光标到单词结尾/单词结尾/行首／行首第一个字符/行尾/整行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;yaw&lt;/strong&gt;: 拷贝光标所在的整个单词&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;dw/de/d0/d^/d$/dd&lt;/strong&gt;:   删除从当前光标到单词结尾/单词结尾/行首／行首第一个字符/行尾/整行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;daw&lt;/strong&gt;: 删除光标所在整个单词&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;yfx/dfx 或(yFx/dFx)&lt;/strong&gt;:   拷贝/删除当前光标到后面(或前面)第一个字符x处，x可以为任意字符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;y*/y# 或(d*/d#)&lt;/strong&gt;:   拷贝（或删除）当前光标到下一个/上一个光标所在单词处&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;D&lt;/strong&gt;:   删除到行尾,相当于d$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;Y&lt;/strong&gt;:   拷贝整行,相当于yy&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;]p&lt;/strong&gt;:  有缩进的粘贴，粘贴时会自动缩进&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;数字、查找域、y/d命令可随意结合使用，如:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;d3F_&lt;/strong&gt;:	表示删除至往前属第3个”_”符号处&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;4&quot;&gt; 编辑命令 &lt;/h2&gt;
+
+&lt;p&gt;删除/拷贝/粘贴后vim依然停留在正常模式,如需快速进入编辑模式,不仅可以用a或i,还有很多更便捷的操作&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;a/i&lt;/strong&gt;:	进入编辑模式,a表示在光标后插入,i表示光标位置插入&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;A&lt;/strong&gt;:   在本行行尾插入&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;J&lt;/strong&gt;:  可以去除本行和下一行之间的换行符，也就是将下一行续接到本行尾部，这个真是不要太有用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;cc/cw/c$/c0/c^&lt;/strong&gt;:   删除整行/当前字/至行尾/至行首/至第一个字符，并进入编辑模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;c2fa&lt;/strong&gt;:	删除至光标后第2个字符a处,并进入编辑模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;C&lt;/strong&gt;:	删除至行尾并进入编辑模式,相当于c$&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s&lt;/strong&gt;:   删除当前字符并进入编辑模式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;S&lt;/strong&gt;:   删除光标所在行并进入编辑模式，同cc命令&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;x&lt;/strong&gt;:	删除当前字符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;5&quot;&gt; 替换命令 &lt;/h2&gt;
+
+&lt;p&gt;vi/vim 中可以在&lt;em&gt;命令模式&lt;/em&gt;下使用s命令来替换字符串。方法为:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;[a,b]s/str1/str2/[g]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;其中[a,b]代表作用的行数，其中a、b为具体数字代表行数，a和b为”.”代表当前行，为”$”代表最后一行。用%替[a,b]表示所有行。
+g表示替换当前行的所有str1，不带g则仅替换当前行的第一个。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s/str1/str2/&lt;/strong&gt;:   替换当前行第一个str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s/str1/str2/g&lt;/strong&gt;:   替换当前行所有str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;10,$s/str1/str2/&lt;/strong&gt;:   替换第10行到最后一行中每一行的第一个str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;.,100s/str1/str2/g&lt;/strong&gt;:   替换当前行到第100行中每行的所有str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;%s/str1/str2/&lt;/strong&gt;:   其中%表示替换所有行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;%s/^/str1/&lt;/strong&gt;:   将所有行到开头处加入str1字符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s/str1/str2/gc&lt;/strong&gt;:   替换当前行所有str1为str2，替换的每次需要确认。c是confirm的缩写&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;可以使用 # 作为分隔符，此时中间出现的 / 不会作为分隔符&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s#str1/#str2/#&lt;/strong&gt;:   替换当前行第一个 str1/ 为 str2/，使用了#作为分隔符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;s+/root/user1+/usr/user2+&lt;/strong&gt;:   替换 /root/user1 为/usr/user2，使用了+作为分隔符&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;除了用s命令开头，也可以用如下方式：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;[a,b]g/str1/[command]&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;grep满足正则式str1的所有行，执行对应操作。如：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;g/str1/d&lt;/strong&gt;:   将所有包含str1的行删除&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;g/^$/d&lt;/strong&gt;:   将所有空行删除&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;后跟s命令时，将s命令的第一个参数置空,因为它会使用grep来的行。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;g/str1/s//str2/&lt;/strong&gt;:   等同于 %s/str1/str2/ 替换每一行的第一个str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;g/str1/s//str2/g&lt;/strong&gt;:   等同于 %s/str1/str2/g 替换每一行中所有str1为str2&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;%s/ *$//g&lt;/strong&gt;:   删除所有行尾空格&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;由于window下用 回车换行（\r\n）来表示换行，linux下是换行（\n）来表示。这样，将window上的文件拷到unix上用时，总会有个^M。
+在unix下删除windows文件的^M符号,只需&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;%s/^M//&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;即可。也可以使用shell的tr命令或sed命令:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;cat filename | tr -d “^M” &amp;gt; newfile&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;sed -e “s/^M//” filename &amp;gt; new file&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;其中^M符号的输入方式见本文末尾，&lt;strong&gt;用先ctrl+v再ctrl+m输入&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;6&quot;&gt; 标签页命令 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:newtab filename&lt;/strong&gt;:   新vim标签页打开文件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;打开后：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;gt/gT&lt;/strong&gt;:  切换到下一个/上一个标签页&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+ws&lt;/strong&gt;:   水平切分标签页，两个是同一个文件，有任何操作都是相同的&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+wv&lt;/strong&gt;:  垂直切分标签页&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+ww&lt;/strong&gt;:   切换标签页&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+wq&lt;/strong&gt;:   关闭当前标签页&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:sp filename&lt;/strong&gt;:   split标签页打开文件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:vsp filename&lt;/strong&gt;:   垂直split标签页打开文件&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:e filename&lt;/strong&gt;:   把当前缓冲区文件存为文件filename&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;7&quot;&gt; 缩进 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;&amp;gt;&amp;gt;&lt;/strong&gt;:   行向右移动一个tab&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:12,24&amp;gt;&lt;/strong&gt;:   将12行到14行的数据都向右移动一个tab.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;:12,24&amp;gt;&amp;gt;&lt;/strong&gt;:   将12行到14行的数据都向右移动两个tab.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;==&lt;/strong&gt;:  自动缩进当前行&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;gg=G&lt;/strong&gt;:   自动缩进&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;8&quot;&gt; 补全补齐 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+p(ctrl+n)&lt;/strong&gt;:   在编辑模式中, 输入几个字符后再输入此命令则vi 开始向上(下)搜索开头与其匹配的单词并补齐, 不断输入此命令则循环查找. 此命令会在所有在这个vim 程序中打开的文件中进行匹配.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+x+l&lt;/strong&gt;:   在编辑模式中, 此命令快速补齐整行内容, 但是仅在本窗口中出现的文档中进行匹配.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+x+f&lt;/strong&gt;:   在编辑模式中, 这个命令表示补齐文件名. 如输入: /usr/local/tom 后再输入此命令则它会自动匹配出: /usr/local/tomcat/&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;abbr&lt;/strong&gt;:   即缩写. 这是一个宏操作, 可以在编辑模式中用一个缩写代替另一个字符串. 比如:abbr sprt System.out.println，以后在输入sprt后再输入其他非字母符号, 它就会自动扩展为System.out.println&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;9&quot;&gt; 其他 &lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ga&lt;/strong&gt;:   显示光标字符的编码值&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;ctrl+a/ctrl+x&lt;/strong&gt;:   可以将光标所在处的数字加1/减1(这个命令让人想笑)&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;guu/guw/gu$/gu0/gu^&lt;/strong&gt;:  当前行/到词尾/到行尾/到行首/到行首第一个字符转换为小写&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;gUU/gUw/gU$/gU0/gU^&lt;/strong&gt;:   当前行/到词尾/到行尾/到行首/到行首第一个字符转换为大写&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;输入^M时，使用ctrl+v,ctrl+m即可。输入^A等也是同理, 前面先加ctrl+v即可。&lt;/strong&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 12 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/vim/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/vim/</guid>
+        
+        <category>technology</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>《浪潮之巅》随想</title>
+        <description>&lt;p&gt;《浪潮之巅》读完，仿佛经历了几十年的历史沉沦。&lt;/p&gt;
+
+&lt;p&gt;不到30年的时间，IBM、摩托罗拉、诺基亚、AT&amp;amp;T、朗讯、思科、微软等巨头从崛起到沉沦。&lt;/p&gt;
+
+&lt;p&gt;其风华正盛的时候，又何尝不是如今的google、Facebook？又如何不似今日的BAT？&lt;/p&gt;
+
+&lt;p&gt;抓着移动互联网的尾巴进入这个行业，下一个时代在哪里？&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;借用&lt;a href=&quot;https://www.zhihu.com/people/li-xu-ran-94/activities&quot;&gt;李栩然&lt;/a&gt;在&lt;a href=&quot;https://www.zhihu.com/question/30147821&quot;&gt;知乎&lt;/a&gt;下的回答：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这个变化极快的世界里。40年前的人们还上不了大学，30年前的人们还等着单位分房子；20年前，国企的员工还不知道国家真的会让他们下岗；10年前，这个世界还是诺基亚、摩托罗拉、索尼的天下，第一部苹果才刚刚面世，没小米什么事儿；8年前，双十一的交易额才5000万，如今已经千亿了；5年前，北京的房价还是一副要跳水的模样，谁也想不到会涨到如今的天价。&lt;/p&gt;
+
+  &lt;p&gt;这是一个变化极快的世界，尤其在当代的中国。不知道为什么，很多人开始工作后就认为，眼前的这份工作是可以干一辈子的，自己手里的知识是可以管到老的，那家公司承诺的股权是可以兑现的。现实可能是，你的这份工作过几年就没了，你学的东西不到两年就没人用了，承诺你的那家公司不到两年就倒闭了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;在这个世界里，唯一不变的只有“变化”。十年之间就可以经历一个时代。&lt;/p&gt;
+
+&lt;p&gt;十年以来，从生活的方方面面，科技和常识不断在改变。
+珠穆朗玛峰从8848降到了8844米，太阳系九大行星少了一颗，司母戊鼎改名为后母戊鼎，从小就认为的八年抗战也变成了十四年。
+曾经以为是常识的东西，都在不断被颠覆。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+十年有多久呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;
+十年之前的2007年，我应该刚上高中吧？
+七年之前上大学才第一次走出家门，
+从三年前走进USTC，到一年前决定加入百度，到四个月前进京的火车上见到了想一辈子呵护的人。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;回想十年时间，有多久呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;记得看《倚天屠龙记》时看到那句：&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;张三丰一代宗师，瞧着郭襄的遗书，眼前似乎又看到了那个明慧潇洒的少女，可是，那是一百年前的事了。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;年少不懂，百年前的事焉能记得。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;如今思来，一百年能有多久呢？也没多久。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 11 Nov 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/11/idea_lc/</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/idea_lc/</guid>
+        
+        <category>book</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
