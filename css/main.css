@@ -504,7 +504,7 @@ img::-moz-selection {
     font-size: 0.6em;
     font-weight: lighter;
     letter-spacing: 3px;
-    color: #CCCCCC;
+    color: #000000;
     -webkit-font-smoothing: antialiased; }
 
   .panel-cover {
