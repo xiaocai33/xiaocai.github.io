@@ -141,10 +141,10 @@ h5 {
   font-size: 1em; }
 
 p {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin-top: 5px;
   line-height: 1.7em; 
-  padding-left: 20px;
+  padding-left: 0px;
 }
 
 strong {
@@ -156,8 +156,8 @@ em {
 blockquote {
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 0px;
-  margin-left: 10px;
+  padding-left: 10px;
+  margin-left: 0px;
 
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-weight: lighter;
