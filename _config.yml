@@ -1,37 +1,37 @@
 # Basic
-title: 寇少
+title: Zsper
 subtitle: 个人博客
-description: 程序员，喜欢打麻将，偶尔写代码.
+description: 程序员，喜欢历史，偶尔写代码.
 # 头像里面的标题
-avatarTitle: KOUSHAO
+avatarTitle: ZSPER
 # 头像里面的描述
-avatarDesc: 算法 / 机器学习
-url: "http://kousw.com"
+avatarDesc: 移动端 / iOS 开发
+url: "http://zsper.com"
 
 
 
 # Comment
 comment:
-    # disqus: koushao
-    duoshuo: koushao
+    # disqus: zsper
+    duoshuo: zsper
 
 # Social
 social:
-    qq: 787063665 
-    github: shaohuacheng
-    mail: kou_sw@163.com
+    qq: 460975560 
+    github: xiaocai33
+    mail: tycai1@163.com
 
 # 百度统计 
 # 使用博客模板请去掉或者更换 id 
 baidu:
-    id: 957e77e1acf1af070570eaad681b4bcb
+    id: 1b1c65a1b7cfb2a9961062c373c9fa05
           
 
 # Google Analytics
 # 使用博客模板请去掉或者更换 id
-ga:
-    id: UA-89438027-1   
-    host: auto  
+#ga:
+#    id: UA-89438027-1   
+#    host: auto  
 
 
 # 《----------------- 上面的信息修改成你自己的 ---------------------------》
