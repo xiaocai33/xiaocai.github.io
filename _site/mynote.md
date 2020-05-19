@@ -4,7 +4,7 @@ title: 我的书签
 ---
 
 
-* [数据挖掘和机器学习方向的一些顶级会议](http://www.kousw.com/conference)
+* [数据挖掘和机器学习方向的一些顶级会议](http://www.https://github.com/xiaocai33/xiaocai33.github.io.com/conference)
 
 * [Markdown语法](https://www.zybuluo.com/mdeditor)
 
