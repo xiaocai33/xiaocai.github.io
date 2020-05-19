@@ -1,4 +1,4 @@
-# shaohuacheng 的博客模板    
+<!-- # Zsper 的博客模板    
 
 敬请献上右上角star, 你的star是我持续更新的动力, 谢谢 😄.
 
@@ -13,10 +13,10 @@
 
 #### 获取博客
 
-> $ git clone https://github.com/shaohuacheng/shaohuacheng.github.io.git
+> $ git clone git@github.com:xiaocai33/xiaocai33.github.io.git
 
 
-进shaohuacheng.github.io/ 目录下， 开启本地服务 
+进xiaocai33.github.io/ 目录下， 开启本地服务 
 
 > $ jekyll server
 
@@ -34,5 +34,5 @@
 ### 把这个博客变成你自己的博客
 
 根据上面【提示】修改过后，在你的github里创建一个username.github.io的仓库，username指的值你的github的用户名。      
-创建完成后，把我的这个模板使用git push到你的username.github.io仓库下就行了。
+创建完成后，把我的这个模板使用git push到你的username.github.io仓库下就行了 -->。
 
